@@ -25,7 +25,7 @@ public class WebhookController {
         return new HttpEntity<>("Received delivered");
     }
 
-    @RequestMapping(value = "/dropped", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @RequestMapping(value = "/webhook", method = RequestMethod.POST)
     public HttpEntity<String> dropped(@RequestParam final MultiValueMap<String, String> event) {
         logger.info("Received webhook: " + event);
         return new HttpEntity<>("Received dropped");
