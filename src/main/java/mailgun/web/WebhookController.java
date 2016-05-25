@@ -3,10 +3,11 @@ package mailgun.web;
 import mailgun.Main;
 import org.apache.log4j.Logger;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-@RestController
+@Controller
 public class WebhookController {
 
     static Logger logger = Logger.getLogger(Main.class);
