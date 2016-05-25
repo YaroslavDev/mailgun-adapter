@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,7 +26,7 @@ public class WebhookController {
     }
 
     @RequestMapping(value = "/dropped", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public HttpEntity<String> dropped(@RequestParam("event") String event) {
+    public HttpEntity<String> dropped(@RequestBody final MultiValueMap<String, String> event) {
         logger.info("Received webhook: " + event);
         return new HttpEntity<>("Received dropped");
     }
