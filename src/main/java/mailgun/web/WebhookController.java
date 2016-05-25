@@ -19,14 +19,14 @@ public class WebhookController {
     }
 
     @RequestMapping(value = "/delivered", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public HttpEntity<String> webhook(@RequestParam("event") String event) {
+    public HttpEntity<String> delivered(@RequestParam("event") String event) {
         logger.info("Received webhook: " + event);
         return new HttpEntity<>("Received delivered");
     }
 
     @RequestMapping(value = "/dropped", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public HttpEntity<String> webhook(@RequestBody MultipartFile[] files) {
-        logger.info("Received webhook: " + files);
+    public HttpEntity<String> dropped(@RequestParam("event") String event) {
+        logger.info("Received webhook: " + event);
         return new HttpEntity<>("Received dropped");
     }
 }
