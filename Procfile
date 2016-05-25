@@ -1,1 +1,1 @@
-web:    java -jar target/helloworld-1.0-SNAPSHOT.jat
+web:    java -jar target/helloworld-1.0-SNAPSHOT.jar
