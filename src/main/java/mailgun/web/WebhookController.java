@@ -3,6 +3,8 @@ package mailgun.web;
 import mailgun.Main;
 import org.apache.log4j.Logger;
 import org.springframework.http.MediaType;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +20,8 @@ public class WebhookController {
     }
 
     @RequestMapping(value = "/webhook", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public Boolean webhook() {
-        logger.info("Received webhook");
+    public Boolean webhook(@RequestBody final MultiValueMap<String, String> body) {
+        logger.info("Received webhook: " + body);
         return true;
     }
 }
