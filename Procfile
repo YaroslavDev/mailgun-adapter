@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/helloworld-1.0-SNAPSHOT.jar --port $PORT
+web: java $JAVA_OPTS -Dserver.port=$PORT -jar target/helloworld-1.0-SNAPSHOT.jar
