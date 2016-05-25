@@ -9,7 +9,7 @@ public class WebhookController {
 
     @RequestMapping("/status")
     public String status() {
-        return "OK";
+        return "Status: OK";
     }
 
     @RequestMapping(value = "/webhook", method = RequestMethod.POST)
